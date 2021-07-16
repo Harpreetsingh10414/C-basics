@@ -1,19 +1,27 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-    int n,a,multi;
-    printf("Enter any number ");
-    scanf("%d",&n);
-
-    printf("  multiply by - ");
-    scanf("%d",&a);
-
-    for(int i=0;i<=a;i++)
+    int a, b, i, multiplication = 0;
+    printf("Enter a and b\n");
+    scanf("%d %d", &a, &b);
+    if (b < 0)
     {
-        multi+=n(i);
+        a = a + b;
+        b = a - b;
+        a = a - b;
     }
-
-    printf("\nMultiplication -> %d",multi);
-    return 0;
+    if (a >= 0)
+    {
+        for (i = 1; i <= a; i++)
+        {
+            multiplication += b;
+        }
+    }
+    if (a < 0)
+    {
+        for (i = a; i <= -1; i++)
+            multiplication -= b;
+    }
+    printf("Multiplication=%d\n", multiplication);
 }
